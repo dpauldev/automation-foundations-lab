@@ -1,0 +1,21 @@
+[project]
+name = "automation-foundations-lab"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Debashis Paul", email = "33470591+dpauldev@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.6",
+]
+
