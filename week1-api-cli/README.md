@@ -8,3 +8,6 @@ Searches TMDB for a movie title and saves the top match's title, release date, a
 
 ## Usage
 uv run week1-api-cli/movie_search.py "movie title"
+
+## AI Disclosure
+This project was built by me, with Claude AI used as a first-principles teaching tool throughout development, and Claude Code used afterward for a code review and two small fixes (request timeout, correct exit-code handling).
