@@ -23,7 +23,11 @@ url = "https://api.themoviedb.org/3/search/movie"
 
 params = {"api_key": api_key, "query": args.title}
 
-response = requests.get(url, params, timeout=10)
+try:
+    response = requests.get(url, params, timeout=10)
+except requests.exceptions.RequestException as e:
+    print(f"Error: Request failed ({e})")
+    sys.exit(1)
 
 if response.status_code != 200:
     print(
