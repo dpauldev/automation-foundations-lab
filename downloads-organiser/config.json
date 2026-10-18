@@ -1,0 +1,41 @@
+{
+    "categories": {
+        "Documents": [
+            ".pdf",
+            ".docx",
+            ".md",
+            ".txt"
+        ],
+        "Spreadsheets": [
+            ".xlsx",
+            ".xls",
+            ".csv"
+        ],
+        "Photos": [
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".gif",
+            ".heic"
+        ],
+        "Audio": [
+            ".wav",
+            ".mp3"
+        ],
+        "Videos": [
+            ".mp4"
+        ],
+        "Archives": [
+            ".zip"
+        ],
+        "Web Files": [
+            ".json",
+            ".html"
+        ]
+    },
+    "ignore": [
+        ".crdownload",
+        ".download",
+        ".part"
+    ]
+}
