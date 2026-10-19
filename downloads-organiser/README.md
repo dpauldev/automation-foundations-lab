@@ -1,12 +1,13 @@
-# Downloads Organiser (scaffold)
+# Downloads Organiser (work in progress)
 
-Will sort files in a folder (default: `~/Downloads`) into category subfolders by file extension. Scaffold exercise from my automation learning plan: argparse setup, config-file shape, folder structure. **No full build yet.**
+Will sort files in a folder (default: `~/Downloads`) into category subfolders by file extension. Started as a scaffold exercise from my automation learning plan (argparse setup, config-file shape, folder structure) and is now being built up step by step.
 
 ## Status
-Scaffold only. Argparse and the config shape are done. The config loader and the file mover are not built yet.
+Done: argparse setup, config file shape, and the config loader (reads and validates `config.json`, with clear one-line errors and a non-zero exit code on failure).
+To do: scan the source folder, classify each file (move, ignore or unknown), and move files (with `--dry-run` support).
 
 ## Layout
-- `organiser.py`: behaviour (how to organise); currently parses arguments and prints them
+- `organiser.py`: behaviour (how to organise); currently parses arguments, loads and validates the config, and prints a summary
 - `config.json`: data (what goes where)
 - `README.md`: intent (why it works this way)
 
@@ -28,7 +29,7 @@ uv run downloads-organiser/organiser.py [--source FOLDER] [--config FILE] [--dry
 - Unknown extensions are flagged in a report, never moved.
 - Folders are skipped; files with no extension count as unknown.
 - Extensions are compared in lowercase (`HEIC` matches `.heic`).
-- Each extension may appear in only one category; the loader must check this and stop with a clear error, because JSON validity does not catch it.
+- Each extension may appear in only one category; the loader checks this and stops with a clear error naming both categories, because JSON validity does not catch it.
 - Anything in `ignore` is never touched.
 - Dry run is a rehearsal that changes nothing.
 - Test against a throwaway sandbox folder, never the real Downloads.
